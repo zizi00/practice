@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div class="three"></div>
+        <script>
+            // let func1 = function(num1,num2) {
+            //     console.log(arguments)  // Arguments(2) [1, 2, callee: ƒ, Symbol(Symbol.iterator): ƒ] arguments 返回一个Arguments类数组对象，数组是传参集合 
+            //     //Arguments[0: 1
+            //     // 1: 2
+            //     // length: 2
+            //     // callee: ƒ (num1,num2)
+            //     // Symbol(Symbol.iterator): ƒ values()
+            //     // __proto__: Object]     // 有length属性就是类数组,没有就是普通数组;类数组不能使用数组的api
+            //     console.log(arguments.toString())  // [object Arguments]
+            //     console.log(arguments[0])
+            // }
+            // func1(1,2)
+
+            // 闭包
+            
+            // function funA(){
+            //     let a = 10;  // funA的活动对象之中;
+            //     return function(){   //匿名函数的活动对象;
+            //             console.log(a);
+            //     }
+            // }
+            // let b = funA(); 
+            // console.log( 'b:' + b) // 此时b是一个函数
+            // b()  // 10 ， 调用函数funA返回的函数
+            
+            // function outerFn(){
+            // var i = 0; 
+            // function innerFn(){
+            //     i++;
+            //     console.log(i);
+            // }
+            // return innerFn;
+            // }
+            // var inner = outerFn();  //每次外部函数执行的时候，外部函数的地址不同，都会重新创建一个新的地址
+            // inner();
+            // inner();
+            // // inner();
+            // var inner2 = outerFn();
+            // inner2();
+            // inner2();
+            // inner2();
+            // inner();
+            // inner2();
+
+
+            // var i = 0;
+            // function outerFn(){
+            //     function innnerFn(){
+            //         i++;
+            //         console.log(i);
+            //     }
+            //     return innnerFn;
+            // }
+            // var inner1 = outerFn();
+            // var inner2 = outerFn();
+            // inner1();
+            // inner2();
+            // inner1();
+            // inner2();
+            // inner2();
+            // inner1();  // 1 2 3 4 5 6 因为变量i是全局变量
+
+            // (function() { 
+            //     var m = 0; 
+            //     function getM() { return m; } 
+            //     function seta(val) { m = val; } 
+            //     window.g = getM;
+            //     window.f = seta;
+            // })(); 
+            // f(100);
+            // console.info(g());
+
+
+            // function add() { 
+            //     var sum = 1; 
+            //     function tmp(x) { 
+            //         sum = sum + x;
+            //         console.log(sum)
+            //     }
+
+            //     return tmp; 
+            // }
+            // let first =  add()
+            // first(3)
+            // console.log(first)
+
+
+            
+            // var add = function(x) { 
+            //     var sum = 1; 
+            //     var tmp = function(x) { 
+            //         sum = sum + x; 
+            //         return tmp;    
+            //     } 
+            //     var aa = function() { 
+            //         return sum; 
+            //     }
+            //     return tmp;
+            // } 
+            // alert(add(1)(2)(3));
+
+            function Person() {
+            }
+            // 虽然写在注释里，但是你要注意：
+            // prototype是函数才会有的属性
+            console.log(Person.prototype)
+            Person.prototype.name = 'Kevin';
+            console.log(Person.prototype.__proto__)
+            var person1 = new Person();
+            var person2 = new Person();
+            console.log(person1.name) // Kevin
+            console.log(person2.name) // Kevin
+
+        </script>
+    </body>
+</html>

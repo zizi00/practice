@@ -45,16 +45,22 @@
             // console.log(strSearch2) // 1
 
             let strMatch = str.match("t")
-            console.log(strMatch) // ["t", index: 1, input: "stuDent", groups: undefined] 返回数组，有下标
+            // console.log(strMatch) // ["t", index: 1, input: "stuDent", groups: undefined] 返回数组，有下标
             let strMatch1 = str.match(/t/g)
-            console.log(strMatch1) // ["t","t"],无法返回下标
+            // console.log(strMatch1) // ["t","t"],无法返回下标
             let strMatch2 = str.match(/z/g)
-            console.log(strMatch2) // 找不到 返回null
+            // console.log(strMatch2) // 找不到 返回null
 
+
+            // 切割
+            let strSplice = str.split('t')
+            // console.log(strSplice)  //  ["s", "uDen", ""] 
+            
             // 替换
-            let arr = ['t','t','r']
-            let strSplice = arr.splice('t')
-            console.log(strSplice)
+            let arr = [1,2,3,4,5,6]
+            let arrSplice = arr.splice(1,1)
+            console.log(arrSplice)
+            console.log(arr) // 原数组会改变，for慎用，因为元素被删除后，原数组改变了，里面的元素下标也发生改变了
         </script>
     </body>
 </html>
