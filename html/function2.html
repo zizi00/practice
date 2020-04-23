@@ -1,0 +1,39 @@
+
+<!doctype html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <div class="two"></div>
+        <script>
+            function Foo() {             // 1
+                getName = function () {
+                    alert (1);
+                };
+                return this;
+            }
+            Foo.getName = function () {  // 2
+                alert (2);
+            };
+            Foo.prototype.getName = function () {  // 3
+                alert (3);
+            };
+            var getName = function () {   // 4
+                alert (4);
+            };
+            function getName() {   // 5
+                alert (5);
+            }
+            //请写出以下输出结果：
+            Foo.getName();
+            getName();
+            Foo().getName();
+            getName();
+            new Foo.getName();
+            new Foo().getName();
+            new new Foo().getName(); 
+        </script>
+    </body>
+</html>
+
