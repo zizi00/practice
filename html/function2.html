@@ -26,13 +26,13 @@
                 alert (5);
             }
             //请写出以下输出结果：
-            Foo.getName();
-            getName();
-            Foo().getName();
-            getName();
-            new Foo.getName();
-            new Foo().getName();
-            new new Foo().getName(); 
+            // Foo.getName();  // 2   Foo.getName = function() {alert(2)}   重写了getName 函数
+            // getName();  //  程序走的是第4个函数
+            // Foo().getName();  // 程序走第1个函数
+            // getName();   //  程序走的是第4个函数
+            new Foo.getName(); 
+            new Foo().getName(); 
+            // new new Foo().getName(); 
         </script>
     </body>
 </html>

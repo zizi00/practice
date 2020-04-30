@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <script>
+            // 自定义类 Person
+            function Person() {
+                this.a = "22"
+            }
+            var fifi = new Person()   // 有new，Person就是一个自定义类，，Javascript中的function作为构造函数时，就是一个类，搭配上new操作符，可以返回一个对象。
+            // Person() // 没有new， 就是函数Person的调用
+
+            // console.log(typeof Person)  // function
+            // console.log(typeof fifi)  // object
+            // console.log(fifi.a)
+            // Person.prototype.name = 'baby'
+            console.log(Person)  // 构造函数 function Person() {}
+            console.log(Person.prototype)  // 使用prototype属性，可以查看Person是由构造函数 function Person() {} 和原型__proto__ = Object 组成 ，constructor属性保存指向函数Person的一个引用
+            // console.log(fifi.__proto__ === Person.prototype)   // fifi.__proto__ 表示fifi的原型是Person.prototype
+            // console.log(Person.prototype.__proto__ === Object.prototype)
+            // console.log(Object.prototype)
+            // console.log(fifi.__proto__.name)  
+            // console.log(fifi.name) 
+            // console.log(fifi) // 实例化对象，Person{}
+            // console.log(Person.prototype.__proto__) // 构造函数是 function Object() {}  已经是顶层了，所以没有原型了
+        </script>
+    </body>
+</html>
