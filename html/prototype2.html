@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <script>
+            var n1= new Number('1'); 
+            var n2=1;
+            n2.xxx=2;
+            console.log(n1)  // 1
+            console.log(n2)  // 1
+            console.log(n2.xxx); //undefined
+            console.log(n1===n2)//false
+            console.log(n1.toString()===n2.toString())//true 
+            console.log(n1.__proto__)
+            console.log(Number)
+            console.log(Number.prototype)
+            console.log(n1.__proto__===Number.prototype)//true
+            console.log(n1.__proto__===Number) //false
+            // console.log(n2.__proto__===Number)//false 
+            // console.log(n1.__proto__===n2.__proto__)//true
+        </script>
+    </body>
+</html>
