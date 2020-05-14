@@ -2,7 +2,60 @@
 <html>
     <head></head>
     <body>
-        <div></div>
-        <script></script>
+        <style>
+            /* #myCanvas{
+                width: 200px;
+                height: 200px;
+            } */
+        </style>
+        <div class="container">
+            <!-- 浏览器不支持canvas，就显示Your browser does not support the canvas element. IE8及以下不支持-->
+            <canvas id="myCanvas" width="200" height="200">Your browser does not support the canvas element.</canvas>
+        </div>
+        <script>
+            var c = document.getElementById("myCanvas")
+            console.log(c)
+            var cxt = c.getContext("2d")
+            // console.log(cxt)  // CanvasRenderingContext2D 对象
+            // cxt.fillStyle = "#FF0000"
+            // cxt.fillRect(0, 0, 150, 80) // 红色的矩形  左上角坐标（0，0）  宽 150px 高80px
+            
+            //cxt.beginPath()   // 表示直线开始
+            // cxt.moveTo(50,10)   // 起点坐标（50，10）
+            // cxt.lineTo(50,50)   // 终点坐标（50，50）   lineTo() 方法添加一个新点，然后创建从该点到画布中最后指定点的线条（该方法并不会创建线条）
+            // cxt.stroke()
+
+            //cxt.beginPath()
+            // cxt.moveTo(10,10);  //起点（10，10）
+            // cxt.lineTo(80,50);  // 终点（80，50）   如果有第三条边，起点（80，50）
+            // cxt.lineTo(10,50);  // 终点（10，50）   如果有第四条边，起点（10，50）
+            // cxt.lineTo(30,70);  // 终点（30，70）
+            // cxt.stroke();   // 把这些点用直线连接起来
+
+
+            // 画不同颜色的线
+            // cxt.beginPath()
+            // cxt.lineWidth = "5"
+            // cxt.strokeStyle = "red"
+            // cxt.moveTo(10,10)
+            // cxt.lineTo(60,60)
+            // cxt.stroke()
+
+            // cxt.beginPath()
+            // cxt.lineWidth = "5"
+            // cxt.strokeStyle = "blue"
+            // cxt.moveTo(5,5)
+            // cxt.lineTo(50,90)
+            // cxt.stroke()
+
+            // 画圆
+            cxt.beginPath()
+            cxt.fillStyle = "#FF0000";
+            cxt.arc(50,50,50,0,2*Math.PI,true) // false代表顺时针，true代表逆时针
+            cxt.closePath()
+            // cxt.stroke()
+            cxt.fill();
+
+        </script>
     </body>
 </html>

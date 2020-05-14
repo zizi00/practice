@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <style>
+            div{
+                animation: myfirst 5s;
+                width: 100px;
+                height: 100px;
+                background: red;
+            }
+            @keyframes myfirst {
+                /* from 开始， to 结束 */
+                /* from {background: red;}
+                to {background: yellow;} */
+                /* 用百分比表示时间短，0%开始 100%结束 */
+                0%   {background: red;}
+                25%  {background: yellow;}
+                50%  {background: blue;}
+                100% {background: green;}
+            }
+        </style>
+        <div></div>
+    </body>
+</html>
