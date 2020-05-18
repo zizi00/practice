@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    </head>
+    <body>
+        <style>
+            .masonry { 
+                -moz-column-count:3; /* Firefox */
+                -webkit-column-count:3; /* Safari 和 Chrome */
+                column-count:3;
+                -moz-column-gap: 1em;
+                -webkit-column-gap: 1em;
+                column-gap: 0em;
+                /* width: 80%; */
+                width: 800px;
+                margin:2em auto;
+            }
+            .item { 
+                width: 200px;
+                padding: 2em;
+                margin-bottom: 2em;
+                -moz-page-break-inside: avoid;
+                -webkit-column-break-inside: avoid;
+                break-inside: avoid;   /*break-inside:avoid，这是为了控制文本块分解成单独的列，以免项目列表的内容跨列，破坏整体的布局*/
+                background: #f60;
+            }
+        </style>
+        <div class="masonry"> 
+            <div class="item"> 
+                <div class="item_content content-lar" style="height: 20px;"> 1</div> 
+            </div> 
+        <div class="item"> 
+            <div class="item_content content-sma" style="height: 30px;"> 2
+            </div> 
+        </div>
+        <div class="item"> 
+            <div class="item_content content-mid" style="height: 30px;"> 3
+            </div> 
+        </div>
+        <div class="item"> 
+            <div class="item_content content-sma" style="height: 200px;"> 4
+            </div> 
+        </div>
+        <div class="item"> 
+            <div class="item_content content-mid" style="height: 30px;"> 5
+            </div> 
+        </div>
+        <div class="item"> 
+            <div class="item_content content-lar" style="height: 150px;"> 6
+            </div> 
+        </div> 
+        <div class="item"> 
+            <div class="item_content content-sma" style="height: 50px;"> 7
+            </div> 
+        </div>
+        <div class="item"> 
+            <div class="item_content content-lar" style="height: 100px;"> 8
+            </div> 
+        </div>
+        <div class="item"> 
+            <div class="item_content content-lar" style="height: 300px;"> 9
+            </div> 
+        </div>
+        <div class="item"> 
+            <div class="item_content content-sma" style="height: 20px;"> 10
+            </div> 
+        </div>
+
+        <!-- more items --> 
+        </div>            
+    </body>
+</html>

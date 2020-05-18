@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    </head>
+    <body>
+        <style>
+            .masonry { 
+                width: 100%;
+                margin-top: 50px;
+                position:relative;
+            }
+            .item { 
+                z-index: 10;
+                transition: 0.25s;
+                overflow: hidden;
+                position: absolute;
+            }
+            .item div{
+                width: 100%;
+                height: 100%;
+            }
+        </style>
+        <div class="masonry"> 
+            <div class="item"> 
+                <img src="../images/waterFall/1.jpg" alt="">
+            </div> 
+            <div class="item"> 
+                <img src="../images/waterFall/2.jpg" alt=""> 
+            </div>
+            <div class="item"> 
+                <img src="../images/waterFall/3.jpg" alt="">
+            </div>
+            <div class="item"> 
+                <img src="../images/waterFall/4.jpg" alt="">
+            </div>
+            <div class="item"> 
+                <img src="../images/waterFall/5.jpg" alt="">
+            </div>
+            <div class="item"> 
+                <img src="../images/waterFall/6.jpg" alt="">
+            </div> 
+            <div class="item"> 
+                <img src="../images/waterFall/7.jpg" alt=""> 
+            </div>
+            <div class="item"> 
+                <img src="../images/waterFall/8.jpg" alt="">
+            </div>
+            <div class="item"> 
+                <img src="../images/waterFall/9.jpg" alt=""> 
+            </div>
+
+            <!-- more items --> 
+        </div>
+        <script>
+            window.onload = function() {
+                function waterFall() {
+                    var pageWidth = document.documentElement.clientWidth - 8;
+                    var columns = 3; //3列
+                    var itemWidth = parseInt(pageWidth/columns);
+                    var item = document.getElementsByClassName("item")
+                    for(let i=0; i<item.length; i++) {
+                        // 设置每一个item的宽度
+                        item[i].style.width = itemWidth + 'px'
+                    }
+                    var arr = [];
+                }
+                waterFall()
+            }
+        </script>   
+    </body>
+</html>

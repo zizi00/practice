@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    </head>
+    <body>
+        <style>
+             .box {
+                height:123px;
+                padding:1em;
+                margin-top:1em;
+                -moz-page-break-inside:avoid;
+                -webkit-column-break-inside:avoid;
+                break-inside:avoid;
+                border:1px solid #000;
+                background:#909090;
+            }
+            .spe {
+                height:225px;
+            }
+            .box-wrapper {
+                -moz-column-count:2;
+                /* Firefox */
+                -webkit-column-count:2;
+                /* Safari 和 Chrome */
+                column-count:2;
+                -moz-column-gap:1em;
+                -webkit-column-gap:1em;
+                column-gap:1em;
+            }
+        </style>
+        <!-- 盒子竖向排列，先填第一列再填第二列，不满足需求 -->
+        <div class="box-wrapper">
+            <div style="margin-top:0px" class="box">1</div>
+            <div class="box spe">2</div>
+            <div class="box spe">3</div>
+            <div class="box spe">4</div>
+            <div class="box spe">5</div>
+            <div class="box">6</div>
+            <div class="box">7</div>
+            <div class="box spe">8</div>
+            <div class="box spe">9</div>
+        </div>
+    </body>
+</html>
