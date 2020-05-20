@@ -12,5 +12,15 @@
         </main>
         <main></main>
         <footer>你出门了吗</footer>
+        <script>
+            function fn()  
+                {  
+                    this.user = '追梦子';
+                    // console.log(this)
+                    return {};
+                }
+            var a = new fn();
+            console.log(a.user); //undefined
+        </script>
     </body>
 </html>

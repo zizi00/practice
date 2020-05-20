@@ -16,7 +16,7 @@
                 overflow: hidden;
                 position: absolute;
             }
-            .item div{
+            .item img{
                 width: 100%;
                 height: 100%;
             }
@@ -59,11 +59,45 @@
                     var columns = 3; //3列
                     var itemWidth = parseInt(pageWidth/columns);
                     var item = document.getElementsByClassName("item")
+                    var arr = [];
                     for(let i=0; i<item.length; i++) {
                         // 设置每一个item的宽度
                         item[i].style.width = itemWidth + 'px'
+                        let imgList = item[i].childNodes
+                        for(let b=0; b<imgList.length;b++) {
+                            if(imgList[b].nodeName == "#text") {
+                                item[i].removeChild(imgList[b])
+                            }
+                        }
+                        // console.log(item[i])
+                        let width = imgList[0].width
+                        let height = imgList[0].height
+                        let bi = itemWidth/width;
+                        let boxheight = parseInt(height*bi); //图片的高度*比值 = item的高度
+                        item[i].style.height = boxheight + 'px'
+
+                        if(i < columns) {
+                            item[i].style.top = 0 + 'px'
+                            item[i].style.left = (itemWidth+5) * i + 'px'
+                            arr.push(boxheight)
+                        }else {
+                            let minHeight = arr[0];
+                            let index = 0;
+                            for (let j = 0; j < arr.length; j++) {
+                                if (minHeight > arr[j]) {
+                                    minHeight = arr[j];
+                                    index = j;
+                                }
+                            }
+                            // console.log(arr)
+                            // console.log(index)
+                            item[i].style.top = arr[index] + 'px'
+                            // console.log(item[index].style.left)
+                            item[i].style.left = item[index].style.left
+                            arr[index] = arr[index] + boxheight;
+                        }
                     }
-                    var arr = [];
+                    
                 }
                 waterFall()
             }
